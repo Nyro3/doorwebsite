@@ -1,0 +1,285 @@
+/* صفحات الأدمن الجديدة (الطلبات / الحسابات / النافبار / تسجيل الدخول) */
+
+.ap,
+.ap__nav,
+.ap__login,
+.ap__center {
+  --ap-bg: #f2ebdc;
+  --ap-card: #ffffff;
+  --ap-ink: #2b1d12;
+  --ap-muted: #7a6a58;
+  --ap-line: #e3d8c3;
+  --ap-brand: #4a2c1a;
+  --ap-gold: #c4a14f;
+  --ap-ok: #2e7d32;
+  --ap-err: #b3261e;
+  color: var(--ap-ink);
+}
+
+.ap__center {
+  padding: 2rem;
+}
+
+/* ---------- النافبار ---------- */
+.ap__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #261a00;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.ap__nav-link {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f5ecd7;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.ap__nav-link--on {
+  background: var(--ap-gold);
+  border-color: var(--ap-gold);
+  color: #261a00;
+  font-weight: 700;
+}
+.ap__nav-out {
+  margin-inline-start: auto;
+}
+
+/* ---------- الصفحة ---------- */
+.ap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+.ap__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.ap__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.ap__tools {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.ap__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.ap__tab {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--ap-line);
+  background: var(--ap-card);
+  color: var(--ap-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+}
+.ap__tab--on {
+  background: var(--ap-brand);
+  border-color: var(--ap-brand);
+  color: #fff;
+}
+.ap__search {
+  max-width: 420px;
+}
+
+/* ---------- عناصر الفورم ---------- */
+.ap__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--ap-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ap-ink);
+  font: inherit;
+  box-sizing: border-box;
+}
+.ap__input:focus-visible,
+.ap__btn:focus-visible,
+.ap__tab:focus-visible {
+  outline: 2px solid var(--ap-gold);
+  outline-offset: 2px;
+}
+.ap__label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.9rem;
+  color: var(--ap-muted);
+}
+.ap__btn {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--ap-brand);
+  border-radius: 8px;
+  background: var(--ap-brand);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+}
+.ap__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ap__btn--light {
+  background: #fff;
+  color: var(--ap-brand);
+}
+.ap__btn--danger {
+  background: #fff;
+  border-color: var(--ap-err);
+  color: var(--ap-err);
+}
+.ap__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* ---------- الرسائل ---------- */
+.ap__msg {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+}
+.ap__msg--ok {
+  background: #e7f4e8;
+  color: var(--ap-ok);
+}
+.ap__msg--err {
+  background: #fdeceb;
+  color: var(--ap-err);
+}
+
+/* ---------- كروت الطلبات ---------- */
+.ap__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.ap__card {
+  background: var(--ap-card);
+  border: 1px solid var(--ap-line);
+  border-inline-start: 5px solid var(--ap-gold);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+.ap__card--new {
+  border-inline-start-color: #d97706;
+}
+.ap__card--done {
+  border-inline-start-color: var(--ap-ok);
+}
+.ap__card--cancelled {
+  border-inline-start-color: #9a9a9a;
+  opacity: 0.8;
+}
+.ap__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+.ap__main {
+  flex: 1 1 240px;
+  display: grid;
+  gap: 0.2rem;
+}
+.ap__phone {
+  color: var(--ap-brand);
+  text-align: right;
+}
+.ap__status {
+  width: auto;
+  min-width: 150px;
+}
+.ap__small {
+  font-size: 0.85rem;
+  color: var(--ap-muted);
+}
+.ap__details {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--ap-line);
+}
+
+/* ---------- الجداول ---------- */
+.ap__scroll {
+  overflow-x: auto;
+  background: var(--ap-card);
+  border: 1px solid var(--ap-line);
+  border-radius: 10px;
+}
+.ap__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.ap__table th,
+.ap__table td {
+  padding: 0.55rem 0.7rem;
+  text-align: right;
+  border-bottom: 1px solid var(--ap-line);
+  vertical-align: top;
+}
+.ap__table th {
+  color: var(--ap-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ap__table--wide {
+  min-width: 760px;
+}
+.ap__badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #efe6d2;
+  font-size: 0.82rem;
+}
+.ap__badge--admin {
+  background: var(--ap-brand);
+  color: #fff;
+}
+.ap__hint {
+  margin-top: 1rem;
+}
+.ap__hint code {
+  background: #efe6d2;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ---------- تسجيل الدخول ---------- */
+.ap__login {
+  max-width: 380px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .ap__head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ap__status {
+    width: 100%;
+  }
+}

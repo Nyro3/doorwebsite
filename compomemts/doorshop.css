@@ -1,0 +1,733 @@
+/* ==============================
+   Doors Shop - Main Layout
+================================ */
+
+.doors-shop {
+  --ds-brown: #623b26;
+  --ds-gold: #c5a04e;
+  --ds-teal: #347c7d;
+  --ds-cream: #f4efe2;
+  --ds-text: #29251f;
+  --ds-muted: #77736c;
+  --ds-border: #e8e2d8;
+
+  width: 100%;
+  min-width: 0;
+  padding: clamp(20px, 4vw, 60px) clamp(14px, 5vw, 76px);
+  color: var(--ds-text);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.doors-shop *,
+.doors-shop *::before,
+.doors-shop *::after {
+  box-sizing: border-box;
+}
+
+.doors-shop button,
+.doors-shop input,
+.doors-shop select {
+  font: inherit;
+}
+
+.doors-shop button {
+  cursor: pointer;
+}
+
+.ds-intro {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.ds-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--ds-teal);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.ds-intro h1 {
+  margin: 0 0 16px;
+  color: var(--ds-brown);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+.ds-intro p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--ds-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  line-height: 1.9;
+}
+
+/* ==============================
+   Toolbar
+================================ */
+
+.ds-catalog {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.ds-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+.ds-toolbar-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ds-toolbar-title h2 {
+  margin: 0;
+  color: var(--ds-brown);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+.ds-toolbar-title > span {
+  padding: 5px 11px;
+  border-radius: 20px;
+  background: var(--ds-cream);
+  color: var(--ds-brown);
+  font-size: 0.8rem;
+}
+
+.ds-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ds-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(310px, 100%);
+  min-width: 0;
+  padding: 0 13px;
+  border: 1px solid var(--ds-border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ds-muted);
+}
+
+.ds-search > span {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.ds-search input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ds-text);
+}
+
+.ds-search:focus-within {
+  border-color: var(--ds-teal);
+  box-shadow: 0 0 0 3px rgb(52 124 125 / 10%);
+}
+
+.ds-sort {
+  min-height: 46px;
+  max-width: 220px;
+  padding: 0 12px;
+  border: 1px solid var(--ds-border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ds-text);
+  outline-offset: 3px;
+}
+
+/* ==============================
+   Category Filters
+================================ */
+
+.ds-categories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 5px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.ds-category {
+  flex-shrink: 0;
+  min-height: 42px;
+  padding: 10px 20px;
+  border: 1px solid var(--ds-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ds-text);
+  font-size: 0.91rem;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ds-category:hover {
+  border-color: var(--ds-teal);
+  color: var(--ds-teal);
+}
+
+.ds-category.active {
+  border-color: var(--ds-brown);
+  background: var(--ds-brown);
+  color: #fff;
+}
+
+/* ==============================
+   Product Grid
+================================ */
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+  align-items: stretch;
+}
+
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--ds-border);
+  border-radius: 12px;
+  background: #fff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ds-card:hover {
+  transform: translateY(-4px);
+  border-color: #d6c7ac;
+  box-shadow: 0 12px 30px rgb(45 35 25 / 8%);
+}
+
+/* ==============================
+   Product Images
+================================ */
+
+.ds-card-image {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 4 / 4.2;
+  overflow: hidden;
+  background: var(--ds-cream);
+}
+
+.ds-card-image > img,
+.ds-modal-image > img {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.ds-card:hover .ds-card-image > img {
+  transform: scale(1.035);
+}
+
+.ds-image-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(
+      145deg,
+      #eee4d3,
+      #f8f5ee 55%,
+      #dfd1bb
+    );
+  color: var(--ds-brown);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ds-badge {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  right: 13px;
+  max-width: calc(100% - 26px);
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: var(--ds-gold);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.ds-quick-view {
+  position: absolute;
+  z-index: 3;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  min-height: 40px;
+  border: 0;
+  border-radius: 7px;
+  background: rgb(255 255 255 / 95%);
+  color: var(--ds-brown);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ds-card:hover .ds-quick-view,
+.ds-quick-view:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   Product Content
+================================ */
+
+.ds-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.ds-card-category {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--ds-teal);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ds-card-content h3 {
+  margin: 0 0 9px;
+  color: var(--ds-brown);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.ds-card-description {
+  display: -webkit-box;
+  min-height: 48px;
+  margin: 0 0 14px;
+  overflow: hidden;
+  color: var(--ds-muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.ds-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--ds-border);
+  color: var(--ds-muted);
+  font-size: 0.78rem;
+}
+
+.ds-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.ds-price {
+  color: var(--ds-brown);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.ds-quote-button,
+.ds-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--ds-brown);
+  border-radius: 7px;
+  background: var(--ds-brown);
+  color: #fff;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ds-quote-button:hover,
+.ds-primary-button:hover {
+  border-color: var(--ds-teal);
+  background: var(--ds-teal);
+}
+
+/* ==============================
+   Empty State
+================================ */
+
+.ds-empty {
+  padding: 55px 20px;
+  border: 1px dashed var(--ds-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ds-empty h3 {
+  margin: 0 0 10px;
+  color: var(--ds-brown);
+}
+
+.ds-empty p {
+  margin: 0 0 20px;
+  color: var(--ds-muted);
+}
+
+.ds-empty .ds-primary-button {
+  width: auto;
+  min-width: 180px;
+}
+
+/* ==============================
+   Product Modal
+================================ */
+
+.ds-modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgb(20 17 14 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+.ds-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: min(850px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 20px 70px rgb(0 0 0 / 20%);
+}
+
+.ds-modal-close {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ds-brown);
+  font-size: 1.7rem;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
+}
+
+.ds-modal-image {
+  position: relative;
+  isolation: isolate;
+  min-height: 360px;
+  background: var(--ds-cream);
+}
+
+.ds-modal-content,
+.ds-quote-form,
+.ds-form-success {
+  min-width: 0;
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.ds-modal-content h2,
+.ds-quote-form h2,
+.ds-form-success h2 {
+  margin: 0 0 14px;
+  color: var(--ds-brown);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ds-modal-content > p,
+.ds-quote-form > p,
+.ds-form-success p {
+  margin: 0 0 22px;
+  color: var(--ds-muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.ds-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--ds-border);
+  font-size: 0.88rem;
+}
+
+.ds-detail-row > span {
+  color: var(--ds-muted);
+}
+
+.ds-detail-row strong {
+  text-align: left;
+}
+
+.ds-modal-content .ds-primary-button {
+  margin-top: 24px;
+}
+
+.ds-quote-form,
+.ds-form-success {
+  grid-column: 1 / -1;
+}
+
+.ds-quote-form label {
+  display: block;
+  margin: 16px 0 7px;
+  color: var(--ds-brown);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ds-quote-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--ds-border);
+  border-radius: 7px;
+  outline-offset: 2px;
+}
+
+.ds-quote-form input:focus {
+  border-color: var(--ds-teal);
+}
+
+.ds-quote-form .ds-primary-button {
+  margin-top: 22px;
+}
+
+.ds-form-success {
+  text-align: center;
+}
+
+.ds-form-success .ds-primary-button {
+  max-width: 220px;
+}
+
+/* ==============================
+   Responsive Layout
+================================ */
+
+@media (min-width: 1500px) {
+  .ds-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .ds-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ds-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ds-controls {
+    width: 100%;
+  }
+
+  .ds-search {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .doors-shop {
+    padding: 28px 14px;
+  }
+
+  .ds-intro {
+    margin-bottom: 30px;
+  }
+
+  .ds-intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .ds-toolbar {
+    gap: 16px;
+  }
+
+  .ds-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ds-search,
+  .ds-sort {
+    width: 100%;
+    max-width: none;
+  }
+
+  .ds-categories {
+    margin-inline: -2px;
+    gap: 8px;
+  }
+
+  .ds-category {
+    padding-inline: 14px;
+  }
+
+  .ds-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ds-card {
+    border-radius: 9px;
+  }
+
+  .ds-card-content {
+    padding: 11px;
+  }
+
+  .ds-card-content h3 {
+    font-size: 0.94rem;
+  }
+
+  .ds-card-description {
+    min-height: 0;
+    font-size: 0.8rem;
+  }
+
+  .ds-card-meta {
+    gap: 6px;
+    font-size: 0.7rem;
+  }
+
+  .ds-card-bottom {
+    gap: 9px;
+  }
+
+  .ds-price {
+    font-size: 0.82rem;
+  }
+
+  .ds-quote-button {
+    min-height: 40px;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+  }
+
+  .ds-badge {
+    top: 8px;
+    right: 8px;
+    padding: 5px 7px;
+    font-size: 0.67rem;
+  }
+
+  .ds-quick-view {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    min-height: 34px;
+    font-size: 0.75rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  .ds-modal-overlay {
+    padding: 10px;
+  }
+
+  .ds-modal {
+    grid-template-columns: minmax(0, 1fr);
+    max-height: calc(100dvh - 20px);
+    border-radius: 11px;
+  }
+
+  .ds-modal-image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .ds-modal-content,
+  .ds-quote-form,
+  .ds-form-success {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ds-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ds-card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ds-card-content {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doors-shop *,
+  .doors-shop *::before,
+  .doors-shop *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,195 @@
+/* نفس ألوان الهيدر والفوتر */
+.about {
+  --gold: #c4a14f;
+  --gold-dark: #bd9747;
+  --brown-dark: #4b2c1d;
+  --brown-text: #3a2012;
+  --cream: #f2ecde;
+  --sand: #e8d09a;
+
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  color: var(--brown-text);
+  background-color: var(--cream);
+}
+
+.about * {
+  box-sizing: border-box;
+}
+
+.about__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ================= Hero ================= */
+.about__hero {
+  background-color: #281c00;
+  color: var(--cream);
+  text-align: center;
+  padding: 4.5rem 0;
+}
+
+.about__eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.about__title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.about__lead {
+  margin: 0.75rem 0 0;
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+/* ================= Sections ================= */
+.about__section {
+  padding: 4rem 0;
+}
+
+.about__section--alt {
+  background-color: var(--sand);
+}
+
+.about__heading {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.about__story {
+  max-width: 800px;
+}
+
+.about__story p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+/* ================= Offers ================= */
+.about__offers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about__card {
+  background-color: var(--cream);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border-top: 4px solid var(--gold);
+}
+
+.about__card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--brown-dark);
+}
+
+.about__card-text {
+  margin: 0 0 1.5rem;
+  line-height: 1.9;
+}
+
+.about__btn {
+  display: inline-block;
+  background-color: var(--brown-dark);
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7rem 1.75rem;
+  border-radius: 0.25rem;
+  transition: opacity 0.2s;
+}
+
+.about__btn:hover {
+  opacity: 0.85;
+}
+
+/* ================= Values ================= */
+.about__values {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about__value {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.about__value-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: var(--brown-dark);
+  font-weight: 700;
+}
+
+.about__value-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--brown-dark);
+}
+
+.about__value-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .about__values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about__hero {
+    padding: 3rem 0;
+  }
+
+  .about__title {
+    font-size: 2.2rem;
+  }
+
+  .about__section {
+    padding: 2.5rem 0;
+  }
+
+  .about__heading {
+    font-size: 1.5rem;
+  }
+
+  .about__inner {
+    padding: 0 1rem;
+  }
+
+  .about__offers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__values {
+    grid-template-columns: 1fr;
+  }
+}

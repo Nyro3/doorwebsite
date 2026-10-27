@@ -1,26 +1,102 @@
-@import "tailwindcss";
+.details {
+  width: 100%;
+  min-height: 120px;
+  padding: 20px clamp(10px, 3vw, 35px);
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background-color: #347C7D;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(8px, 2vw, 25px);
+
+  direction: rtl;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.detail-item {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.detail-item p {
+  width: 100%;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* العناوين الكبيرة */
+.home_p1_big,
+.home_p2_big,
+.home_p3_big {
+  color: #F4EFE2;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* الوصف الصغير */
+.home_p1_small,
+.home_p2_small,
+.home_p3_small {
+  color: #E2E6DF;
+  font-size: clamp(8px, 0.9vw, 10px);
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 200px;
+}
+
+/* التابلت */
+@media (max-width: 768px) {
+  .details {
+    min-height: 110px;
+    padding: 16px 12px;
+    gap: 10px;
+  }
+
+  .home_p1_big,
+  .home_p2_big,
+  .home_p3_big {
+    font-size: 11px;
+  }
+
+  .home_p1_small,
+  .home_p2_small,
+  .home_p3_small {
+    font-size: 9px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* الموبايل */
+@media (max-width: 480px) {
+  .details {
+    min-height: auto;
+    padding: 14px 6px;
+    gap: 6px;
+  }
+
+  .detail-item {
+    gap: 4px;
+  }
+
+  .home_p1_big,
+  .home_p2_big,
+  .home_p3_big {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .home_p1_small,
+  .home_p2_small,
+  .home_p3_small {
+    font-size: 8px;
+    line-height: 1.5;
+  }
 }

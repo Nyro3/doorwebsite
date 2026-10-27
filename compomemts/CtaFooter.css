@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+
+:root {
+  --gold: #c4a14f;
+  --brown-dark: #4b2c1d;
+  --brown-text: #3a2012;
+  --cream: #f2ecde;
+}
+
+.cta,
+.footer {
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  box-sizing: border-box;
+}
+.cta *,
+.footer * {
+  box-sizing: border-box;
+}
+
+/* ================= CTA ================= */
+.cta {
+  background-color: var(--gold);
+  color: var(--brown-text);
+  padding: 4rem 1.5rem;
+}
+
+.cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* النص يمين (RTL) والأرقام شمال */
+  gap: 2rem;
+}
+
+.cta__title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta__subtitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cta__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  direction: ltr;
+}
+
+.cta__phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown-text);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.cta__btn {
+  background-color: var(--brown-dark);
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  transition: opacity 0.2s;
+}
+.cta__btn:hover {
+  opacity: 0.85;
+}
+
+/* ================= Footer ================= */
+.footer {
+  background-color: var(--brown-dark);
+  color: var(--cream);
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer__brand-name {
+  margin: 0 0 0.75rem;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.footer__brand p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer__brand small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.footer__heading {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.footer__list a {
+  color: var(--cream);
+  text-decoration: none;
+}
+.footer__list a:hover {
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(242, 236, 222, 0.2);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .cta__title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 3rem 1rem;
+  }
+
+  .cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+
+  .cta__actions {
+    align-items: flex-start;
+    width: 100%;
+    direction: rtl;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta__title {
+    font-size: 1.3rem;
+  }
+
+  .cta__phone {
+    font-size: 1.2rem;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}

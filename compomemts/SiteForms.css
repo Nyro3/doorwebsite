@@ -1,0 +1,139 @@
+/* نماذج العملاء: إرسال الطلب + الحساب */
+
+.sf {
+  --sf-ink: #2b1d12;
+  --sf-muted: #7a6a58;
+  --sf-line: #e3d8c3;
+  --sf-brand: #4a2c1a;
+  --sf-gold: #c4a14f;
+  --sf-ok: #2e7d32;
+  --sf-err: #b3261e;
+  display: grid;
+  gap: 0.35rem;
+  max-width: 440px;
+  margin: 1.5rem auto;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--sf-line);
+  border-radius: 12px;
+  color: var(--sf-ink);
+}
+.sf__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+.sf__hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--sf-muted);
+}
+.sf__hint a,
+.sf a {
+  color: var(--sf-brand);
+}
+.sf__label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--sf-muted);
+}
+.sf__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--sf-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--sf-ink);
+  font: inherit;
+  box-sizing: border-box;
+}
+.sf__input:focus-visible,
+.sf__btn:focus-visible,
+.sf__link:focus-visible {
+  outline: 2px solid var(--sf-gold);
+  outline-offset: 2px;
+}
+.sf__btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--sf-brand);
+  border-radius: 8px;
+  background: var(--sf-brand);
+  color: #fff;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sf__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.sf__btn--light {
+  background: #fff;
+  color: var(--sf-brand);
+}
+.sf__link {
+  margin-top: 0.5rem;
+  background: none;
+  border: 0;
+  color: var(--sf-brand);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+.sf__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.sf__msg {
+  margin: 0.5rem 0 0;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
+.sf__msg--ok {
+  background: #e7f4e8;
+  color: var(--sf-ok);
+}
+.sf__msg--err {
+  background: #fdeceb;
+  color: var(--sf-err);
+}
+
+/* ---------- تبويبات الدخول (زائر / حساب جديد / دخول) ---------- */
+.sf__tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  background: #f2ebdc;
+  border-radius: 10px;
+}
+.sf__tab {
+  flex: 1;
+  padding: 0.5rem 0.4rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--sf-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.sf__tab--on {
+  background: var(--sf-brand);
+  color: #fff;
+}
+.sf__tab:focus-visible {
+  outline: 2px solid var(--sf-gold);
+  outline-offset: 2px;
+}
+.sf__badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #efe6d2;
+  color: var(--sf-brand);
+  font-size: 0.82rem;
+}
