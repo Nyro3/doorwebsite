@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "../compomemts/header";
 import Intro from "../compomemts/home_compoments/intro";
-import Shopshow from "../compomemts/home_compoments/shopshow.tsx";
+import Shopshow from "../compomemts/home_compoments/shopshow";
 import AccountForm from "../compomemts/AccountForm";
 import CtaFooter from "../compomemts/CtaFooter";
 
